@@ -1,0 +1,20 @@
+{
+  "include": ["**/*"],
+  "exclude": ["node_modules"],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./build",
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "CommonJS",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "jsx": "react-jsx"
+  }
+}
