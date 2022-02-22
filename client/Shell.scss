@@ -1,3 +1,9 @@
+@import "./Profile.scss";
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
@@ -6,8 +12,11 @@ body {
 
   color: white;
 
+  font-family: "montserrat", sans-serif;
+  font-size: $font-size-desktop;
+
   .landing {
-    background-image: url("./resources/background.png");
+    background-image: url("./resources/background.jpg");
     background-size: cover;
     background-position: no-repeat;
     min-height: 100vh;
@@ -18,4 +27,87 @@ body {
 a {
   color: white;
   text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+legend {
+  line-height: 1em;
+  margin: 0;
+}
+
+.home {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-areas:
+    "tagline empty"
+    "tagline about"
+    "journey about";
+
+  .tagline,
+  .journey {
+    padding-left: $page-padding;
+  }
+  .tagline {
+    grid-area: tagline;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    p {
+      max-width: 40vw;
+    }
+  }
+
+  .journey {
+    grid-area: journey;
+    backdrop-filter: blur(30px);
+  }
+
+  .about-summary {
+    padding: 3rem $page-padding 3rem 3rem;
+    grid-area: about;
+    backdrop-filter: blur(30px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+}
+
+.leftAlign {
+  align-self: flex-start;
+}
+.rightAlign {
+  align-self: flex-end;
+}
+
+@media screen and (max-width: $max-mobile-size) {
+  html,
+  body {
+    font-size: $font-size-mobile;
+  }
+
+  .home {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "tagline"
+      "about"
+      "journey";
+
+    .tagline {
+      padding-right: $page-padding;
+      p {
+        max-width: 100%;
+      }
+    }
+  }
 }

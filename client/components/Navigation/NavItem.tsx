@@ -8,7 +8,7 @@ interface NavItemProps {
 
 const NavItem = ({ to, children }: NavItemProps): ReactElement => {
   return (
-    <Link to={to} className="navItem">
+    <Link to={to} className="nav-item">
       {children}
     </Link>
   );

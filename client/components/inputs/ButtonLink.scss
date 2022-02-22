@@ -1,0 +1,30 @@
+@import "../../Profile.scss";
+
+.link-button {
+  width: fit-content;
+  height: 3rem;
+  padding-right: 1rem;
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  border-bottom: solid 2px white;
+  gap: 1rem;
+
+  .link-button-border {
+    display: block;
+    width: 2px;
+    height: 1.5rem;
+    align-self: flex-end;
+    background-color: white;
+  }
+
+  &:hover {
+    color: $color-link;
+    border-bottom: solid 2px $color-link;
+    .link-button-border {
+      background-color: $color-link;
+    }
+  }
+}

@@ -1,10 +1,23 @@
+@import "../../Profile.scss";
+
 .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1em $page-padding 0;
 
   .nav-drawer {
     display: flex;
     gap: 3em;
+    min-height: 50px;
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &:hover {
+        color: $color-link;
+      }
+    }
   }
 }

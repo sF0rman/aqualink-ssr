@@ -1,0 +1,22 @@
+.row {
+  display: flex;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row,
+.col {
+  gap: 2em;
+  &.none {
+    gap: 0;
+  }
+  &.small {
+    gap: 1em;
+  }
+  &.large {
+    gap: 3em;
+  }
+}
