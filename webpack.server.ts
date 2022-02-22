@@ -39,14 +39,17 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          { loader: MiniCssExtractPlugin.loader, options: { emit: false } },
+          { loader: "css-loader", options: { url: false } },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "images/[name].[ext]",
-          emitFile: false,
+        type: "asset/resource",
+        generator: {
+          filename: "public/images/[hash][ext][query]",
         },
       },
     ],

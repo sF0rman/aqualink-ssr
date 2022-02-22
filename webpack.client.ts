@@ -42,9 +42,9 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: "file-loader",
-        options: {
-          name: "images/[name].[ext]",
+        type: "asset/resource",
+        generator: {
+          filename: "images/[hash][ext][query]",
         },
       },
     ],
@@ -53,6 +53,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: "[name].css" }),
   ],
 };

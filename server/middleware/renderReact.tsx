@@ -1,6 +1,5 @@
 import { RequestHandler } from "express";
 import ReactDOMServer from "react-dom/server";
-import { Routes, Route } from "react-router-dom";
 import { StaticRouter } from "react-router-dom/server";
 import Shell from "../../client/Shell";
 

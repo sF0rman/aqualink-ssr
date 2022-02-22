@@ -7,6 +7,7 @@
     "start:server": "webpack --config webpack.server.ts --mode=development --watch",
     "start:watch": "nodemon --watch build --exec node build/server.js",
     "dev": "npm-run-all --parallel start:*",
+    "dev:client": "webpack serve --config webpack.client.ts --mode=development --open --port 3000",
     "build": "webpack --config webpack.client.ts && webpack --config webpack.server.ts"
   },
   "author": "sForman",
