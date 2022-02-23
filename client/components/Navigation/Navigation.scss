@@ -4,12 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em $page-padding 0;
+  padding: 1em $page-padding-desktop 0;
+  max-height: 3rem;
 
   .nav-drawer {
     display: flex;
     gap: 3em;
-    min-height: 50px;
 
     .nav-item {
       display: flex;
@@ -19,5 +19,16 @@
         color: $color-link;
       }
     }
+  }
+}
+
+
+@media screen and (max-width: $max-mobile-size) {
+  .nav-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -80%;
+    width: 80%;
   }
 }

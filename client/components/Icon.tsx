@@ -1,8 +1,15 @@
-import { faAnchor, faArrowDown, faArrowLeft, faArrowRight, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAnchor,
+  faArrowDown,
+  faArrowLeft,
+  faArrowRight,
+  faArrowUp,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SizeProp } from "@fortawesome/fontawesome-svg-core";
 
-type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor";
+type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor" | "envelope";
 
 interface IconProps {
   name: Icon;
@@ -23,6 +30,8 @@ const Icon = ({ name, size, className = "" }: IconProps) => {
         return <FontAwesomeIcon className={className} size={size} icon={faArrowDown} />;
       case "anchor":
         return <FontAwesomeIcon className={className} size={size} icon={faAnchor} />;
+      case "envelope":
+        return <FontAwesomeIcon className={className} size={size} icon={faEnvelope} />;
       default:
         return <></>;
     }

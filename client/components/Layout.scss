@@ -19,4 +19,29 @@
   &.large {
     gap: 3em;
   }
+
+  &.align-top {
+    align-items: flex-start;
+  }
+  &.align-bottom {
+    align-items: flex-end;
+  }
+  &.align-center {
+    align-items: center;
+  }
+
+  &.justify-between {
+    justify-content: space-between;
+  }
+
+  &.justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.justify-around {
+    justify-content: space-around;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
 }
