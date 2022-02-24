@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem $page-padding-desktop 0;
-  max-height: 4rem;
+  height: 4rem;
 
   .nav-drawer {
     display: flex;
@@ -30,31 +30,39 @@
     right: 2.5rem;
     color: white;
     z-index: 999;
+    cursor: pointer;
 
-    &.open {
-      color: black;
+    &:hover {
+      color: $color-link;
     }
   }
 
-  .nav-drawer {
-    transition: .2s;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    color: black;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: -80vw;
-    width: 80vw;
+  .navigation {
+    .nav-drawer {
+      transition: 0.2s;
+      padding: 5rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      background-color: $color-menu;
+      color: white;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: -80vw;
+      width: 80vw;
+      gap: 0;
 
-    &.open{
-      right: 0;
-    }
+      .nav-item {
+        height: 3rem;
+      }
 
-    .nav-item {
-      color: black;
+      &.open {
+        right: 0;
+      }
+
+      .nav-item {
+        color: white;
+      }
     }
   }
 }

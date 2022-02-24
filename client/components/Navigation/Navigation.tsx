@@ -15,7 +15,7 @@ const Navigation = (): ReactElement => {
     <div className="navigation">
       <img src={Logo} className="main-logo" alt="" />
       <div className={`nav-drawer ${menuOpen ? "open" : ""}`}>
-        <Icon name="bars" size="2x" className={`menuToggle mobile ${menuOpen ? "open" : ""}`} onClick={toggleDrawer} />
+        <Icon name={menuOpen ? "cross" : "bars"} size="2x" className={`menuToggle mobile ${menuOpen ? "open" : ""}`} onClick={toggleDrawer} />
         <NavItem to="/">Home</NavItem>
         <NavItem to="/products">Products</NavItem>
         <NavItem to="/about">About AQUALINK</NavItem>

@@ -4,8 +4,10 @@ $page-background: #071927;
 
 $page-padding-desktop: 8vw;
 $page-padding-mobile: 5vw;
-$text-color: #ffffff;
+
+$color-text: #ffffff;
 $color-link: #f1e153;
+$color-menu: #0f161b;
 
 $font-size-desktop: calc(12px + 4 * ((100vw - 320px) / 680));
 $font-size-mobile: calc(16px + 6 * ((100vw - 320px) / 680));

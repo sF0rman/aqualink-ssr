@@ -57,7 +57,7 @@ p {
 
 .home {
   display: grid;
-  height: calc(100vh - 3rem);
+  height: calc(100vh - 4rem);
   grid-template-columns: 1.8fr 1.2fr;
   grid-template-rows: 1fr auto auto;
   grid-template-areas:

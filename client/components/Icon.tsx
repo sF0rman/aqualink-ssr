@@ -1,16 +1,14 @@
+import { SizeProp } from "@fortawesome/fontawesome-svg-core";
 import {
   faAnchor,
   faArrowDown,
   faArrowLeft,
   faArrowRight,
-  faArrowUp,
-  faEnvelope,
-  faBars,
+  faArrowUp, faBars, faEnvelope, faXmark
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SizeProp } from "@fortawesome/fontawesome-svg-core";
 
-type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor" | "bars" | "envelope";
+type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor" | "bars" | "x" | "envelope";
 
 interface IconProps {
   name: Icon;
@@ -34,6 +32,8 @@ const Icon = ({ name, size, className = "", onClick }: IconProps) => {
         return <FontAwesomeIcon onClick={onClick} className={className} size={size} icon={faAnchor} />;
       case "bars":
         return <FontAwesomeIcon onClick={onClick} className={className} size={size} icon={faBars} />;
+      case "cross":
+        return <FontAwesomeIcon onClick={onClick} className={className} size={size} icon={faXmark} />;
       case "envelope":
         return <FontAwesomeIcon onClick={onClick} className={className} size={size} icon={faEnvelope} />;
       default:
