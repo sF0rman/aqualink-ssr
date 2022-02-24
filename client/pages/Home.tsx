@@ -20,7 +20,7 @@ const Home = (): ReactElement => {
             <Row align="center">
               <>
                 <Icon name="envelope" size="2x" className="leftAlign" />
-                <p>For more information or other enquiries</p>
+                <p>Need more information or have other enquiries?</p>
               </>
             </Row>
             <ButtonLink to="/contact" className="bottomAlign">Get in touch</ButtonLink>
