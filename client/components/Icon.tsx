@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor" | "bars" | "x" | "envelope";
+type Icon = "" | "arrowRight" | "arrowLeft" | "arrowUp" | "arrowDown" | "anchor" | "bars" | "cross" | "envelope";
 
 interface IconProps {
   name: Icon;

@@ -5,10 +5,12 @@
 }
 
 html,
-body {
+body,
+.root,
+.shell {
   margin: 0;
   padding: 0;
-  background-color: #071927;
+  background-color: $page-background;
 
   color: white;
 
@@ -16,13 +18,59 @@ body {
   font-size: $font-size-desktop;
 
   min-height: 100vh;
+  width: 100%;
 
-  .landing {
+  &.landing {
+    height: 100vh;
     background-attachment: fixed;
     background-image: url("./resources/background.jpg");
-    background-position: cover;
-    min-height: 100vh;
-    width: 100%;
+  }
+}
+
+.shell {
+  min-height: 100vh;
+}
+
+.home {
+  height: calc(100% - 5rem);
+  display: flex;
+  align-items: flex-end;
+  .home-wrapper {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    grid-template-areas:
+      "tagline about"
+      "journey about";
+
+    align-items: stretch;
+
+    .tagline {
+      grid-area: tagline;
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1em;
+
+      padding: 0 $page-padding-desktop;
+    }
+
+    .journey {
+      grid-area: journey;
+      backdrop-filter: blur(30px);
+      padding: 3rem 5rem 3rem $page-padding-desktop;
+      background-color: $color-menu;
+      align-self: end;
+    }
+
+    .about-summary {
+      background-color: #00000044;
+      padding: 3rem $page-padding-desktop 3rem 3rem;
+      grid-area: about;
+      backdrop-filter: blur(30px);
+      align-self: end;
+    }
   }
 }
 
@@ -50,50 +98,6 @@ p {
   line-height: 1.2em;
 }
 
-.main-logo {
-  width: 60vw;
-  max-width: 280px;
-}
-
-.home {
-  display: grid;
-  height: calc(100vh - 4rem);
-  grid-template-columns: 1.8fr 1.2fr;
-  grid-template-rows: 1fr auto auto;
-  grid-template-areas:
-    "tagline empty"
-    "tagline about"
-    "journey about";
-
-  .tagline {
-    grid-area: tagline;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-
-    padding-left: $page-padding-desktop;
-    p {
-      filter: drop-shadow(1px, 1px, 10px, black);
-      max-width: 38vw;
-    }
-  }
-
-  .journey {
-    grid-area: journey;
-    backdrop-filter: blur(30px);
-    padding: 3rem 5rem 3rem $page-padding-desktop;
-    background-color: $page-background;
-  }
-
-  .about-summary {
-    background-color: #00000044;
-    padding: 3rem $page-padding-desktop 3rem 3rem;
-    grid-area: about;
-    backdrop-filter: blur(30px);
-  }
-}
-
 .leftAlign {
   align-self: flex-start;
 }
@@ -106,33 +110,45 @@ p {
 
 @media screen and (max-width: $max-mobile-size) {
   html,
-  body {
+  body,
+  .shell,
+  .root {
     font-size: $font-size-mobile;
+  }
+
+  .home {
+    .home-wrapper {
+      margin-top: 4rem;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "empty"
+        "tagline"
+        "about"
+        "journey";
+      gap: 5rem;
+      .tagline {
+        padding: 3rem $page-padding-mobile;
+      }
+      .journey,
+      .about-summary {
+        width: 100vw;
+        background: $color-menu;
+        padding: 3rem $page-padding-mobile;
+      }
+    }
   }
 
   .mobile {
     display: block;
   }
+}
 
-  .home {
-    margin-top: 4rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "empty"
-      "tagline"
-      "about"
-      "journey";
-    gap: 5rem;
-    .tagline {
-      padding-right: $page-padding-mobile;
-      p {
-        max-width: 100%;
-      }
-    }
-    .journey,
-    .about-summary {
-      padding: 3rem $page-padding-mobile;
-    }
+@media screen and (min-width: $min-large-screen-size) {
+  html,
+  body,
+  .shell,
+  .root {
+    font-size: $font-size-large;
   }
 }

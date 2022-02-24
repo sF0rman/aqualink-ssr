@@ -1,15 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap");
 
-$page-background: #071927;
+$page-background: #223139;
 
-$page-padding-desktop: 8vw;
+$navigation-height: 5rem;
+$page-padding-desktop: 9vw;
 $page-padding-mobile: 5vw;
 
 $color-text: #ffffff;
 $color-link: #f1e153;
 $color-menu: #0f161b;
 
-$font-size-desktop: calc(12px + 4 * ((100vw - 320px) / 680));
+$font-size-large: calc(32px + 14 * ((100vw - 2400px) / 1500));
+$font-size-desktop: calc(14px + 6 * ((100vw - 110px) / 1280));
 $font-size-mobile: calc(16px + 6 * ((100vw - 320px) / 680));
 
+$min-large-screen-size: 2561px;
 $max-mobile-size: 1100px;
