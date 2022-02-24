@@ -4,12 +4,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em $page-padding-desktop 0;
-  max-height: 3rem;
+  padding: 2rem $page-padding-desktop 0;
+  max-height: 4rem;
 
   .nav-drawer {
     display: flex;
     gap: 3em;
+    z-index: 100;
 
     .nav-item {
       display: flex;
@@ -22,13 +23,38 @@
   }
 }
 
-
 @media screen and (max-width: $max-mobile-size) {
+  .menuToggle {
+    position: fixed;
+    top: 1.8rem;
+    right: 2.5rem;
+    color: white;
+    z-index: 999;
+
+    &.open {
+      color: black;
+    }
+  }
+
   .nav-drawer {
+    transition: .2s;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -80%;
-    width: 80%;
+    right: -80vw;
+    width: 80vw;
+
+    &.open{
+      right: 0;
+    }
+
+    .nav-item {
+      color: black;
+    }
   }
 }

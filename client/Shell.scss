@@ -20,11 +20,14 @@ body {
   .landing {
     background-attachment: fixed;
     background-image: url("./resources/background.jpg");
-    background-size: cover;
-    background-position: top;
+    background-position: cover;
     min-height: 100vh;
     width: 100%;
   }
+}
+
+.mobile {
+  display: none;
 }
 
 a {
@@ -45,6 +48,11 @@ legend {
 }
 p {
   line-height: 1.2em;
+}
+
+.main-logo {
+  width: 60vw;
+  max-width: 280px;
 }
 
 .home {
@@ -102,11 +110,16 @@ p {
     font-size: $font-size-mobile;
   }
 
+  .mobile {
+    display: block;
+  }
+
   .home {
     margin-top: 4rem;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
+      "empty"
       "tagline"
       "about"
       "journey";
@@ -117,8 +130,9 @@ p {
         max-width: 100%;
       }
     }
-    .journey, .about-summary {
-      padding: 3rem $page-padding-mobile
+    .journey,
+    .about-summary {
+      padding: 3rem $page-padding-mobile;
     }
   }
 }
